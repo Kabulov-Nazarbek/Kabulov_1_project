@@ -1,0 +1,509 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}{% translate 'Home' %}{% endblock %}
+
+{% block style %}
+<!-- bootstrap css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+<!-- style css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<!-- Responsive-->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<!-- fevicon -->
+<link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif"/>
+<!-- font css -->
+<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+<!-- Scrollbar Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+<!-- Tweaks for older IEs-->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+{% endblock %}
+
+{% block content %}
+<!-- banner section start -->
+<div class="banner_section layout_padding">
+    <div class="container-fluid">
+        <div id="banner_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="banner_taital_main">
+                                <h1 class="banner_taital">{% translate 'We Provide Law Practice' %}</h1>
+                                <p class="banner_text">{% translate 'Cicero, written in 45 BC. This book is a treatise on the theory
+                                    of ethics, very popular during the Renaissance. The first line of Lorem' %}</p>
+                                <div class="readmore_btn active"><a href="#">{% translate 'Read More' %}</a></div>
+                                <div class="started_bt"><a href="#">{% translate 'Contact Us' %}</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="banner_taital_main">
+                                <h1 class="banner_taital">{% translate 'We Provide Law Practice' %}</' %}h1>
+                                <p class="banner_text">{% translate 'Cicero, written in 45 BC. This book is a treatise on the theory
+                                    of ethics, very popular during the Renaissance. The first line of Lorem' %}</p>
+                                <div class="readmore_btn active"><a href="#">{% translate 'Read More' %}</a></div>
+                                <div class="started_bt"><a href="#">{% translate 'Contact Us' %}</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="banner_taital_main">
+                                <h1 class="banner_taital">{% translate 'We Provide Law Practice' %}</h1>
+                                <p class="banner_text">{% translate 'Cicero, written in 45 BC. This book is a treatise on the theory
+                                    of ethics, very popular during the Renaissance. The first line of Lorem' %}</p>
+                                <div class="readmore_btn active"><a href="#">{% translate 'Read More' %}</a></div>
+                                <div class="started_bt"><a href="#">{% translate 'Contact Us' %}</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="banner_img"><img src="{% static 'images/banner-img.png' %}"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#banner_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#banner_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- banner section end -->
+<!-- box section start -->
+<div class="container">
+    <div class="box_section">
+        <div class="online_box">
+            <div class="online_box_left">
+                <div class="online_box_main">
+                    <div class="box_left">
+                        <div class="right_arrow"><i class="fa fa-arrow-right"></i></div>
+                    </div>
+                    <div class="box_right">
+                        <p class="book_text">{% translate 'Book At' %}</p>
+                        <h4 class="appoinment_text">{% translate 'Appoinment' %}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="online_box_left active">
+                <div class="online_box_main">
+                    <div class="box_left">
+                        <div class="right_arrow"><i class="fa fa-arrow-right"></i></div>
+                    </div>
+                    <div class="box_right">
+                        <p class="book_text active">{% translate 'Get Free' %}</p>
+                        <h4 class="appoinment_text active"> {% translate 'Evalution' %}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="online_box_left">
+                <div class="online_box_main">
+                    <div class="box_left">
+                        <div class="right_arrow"><i class="fa fa-arrow-right"></i></div>
+                    </div>
+                    <div class="box_right">
+                        <p class="book_text">{% translate 'Pay Invoice' %}</p>
+                        <h4 class="appoinment_text">{% translate 'Online' %}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- box section end -->
+<!-- services section start -->
+<div class="services_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="studies_taital">{% translate 'SERVICE OFFERINGS' %}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="services_section_2">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="service_box">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-1.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-4.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'Corporate Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service_box active">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-5.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-5.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'Employments Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button active"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service_box">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-3.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-6.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'International Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="service_box">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-1.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-4.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'Corporate Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service_box active">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-5.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-5.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'Employments Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button active"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service_box">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-3.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-6.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'International Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="service_box">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-1.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-4.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'Corporate Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service_box active">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-5.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-5.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'Employments Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary ' %}</p>
+                                    <div class="readmore_button active"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="service_box">
+                                    <div class="house_icon">
+                                        <img src="{% static 'images/icon-3.png' %}" class="image_1">
+                                        <img src="{% static 'images/icon-6.png' %}" class="image_2">
+                                    </div>
+                                    <h3 class="corporate_text">{% translate 'International Law' %}</h3>
+                                    <p class="chunks_text">{% translate 'chunks as necessary, making this the first true generator on
+                                        the Internet. It uses a dictionary' %} </p>
+                                    <div class="readmore_button"><a href="#">{% translate 'Read More' %}</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                <i class="fa fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- services section end -->
+<!-- studies section start -->
+<div class="studies_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="studies_taital">{% translate 'Recent Case Studies' %}</h1>
+            </div>
+        </div>
+        <div class="studies_section_2">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="hover01 column">
+                        <figure><img src="{% static 'images/service-img1.png' %}"></figure>
+                    </div>
+                    <div class="studies_box">
+                        <h3 class="introduction_text">{% translate 'Master of Law, 2010' %}</h3>
+                    </div>
+                    <div class="read_bt"><a href="#">{% translate 'Read More' %}</a></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hover01 column">
+                        <figure><img src="{% static 'images/service-img2.png' %}"></figure>
+                    </div>
+                    <div class="studies_box">
+                        <h3 class="introduction_text">{% translate 'Master of Law, 2012' %}</h3>
+                    </div>
+                    <div class="read_bt active"><a href="#">{% translate 'Read More' %}</a></div>
+                </div>
+                <div class="col-md-4">
+                    <div class="hover01 column">
+                        <figure><img src="{% static 'images/service-img3.png' %}"></figure>
+                    </div>
+                    <div class="studies_box">
+                        <h3 class="introduction_text">{% translate 'Master of Law, 2014' %}</h3>
+                    </div>
+                    <div class="read_bt"><a href="#">{% translate 'Read More' %}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- studies section end -->
+<!-- about section start -->
+<div class="about_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about_img"><img src="{% static 'images/about-img.png' %}"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="about_text_main">
+                    <h1 class="about_taital">{% translate 'About Us' %}</h1>
+                    <p class="about_text">{% translate 'anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+                        generators on the Internet tend to repeat predefined chunks as necessary, making this the first
+                        true generator on the Internet' %}</p>
+                    <div class="readmore_bt"><a href="#">{% translate 'Read More' %}</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about section end -->
+<!-- testimonial section start -->
+<div class="customer_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="customer_taital">{% translate 'SATISFIED CLIENT Says' %}</h1>
+            </div>
+        </div>
+    </div>
+    <div id="my_slider" class="carousel slide" data-ride="carousel">
+        <!--            <div class="carousel-inner">-->
+        <!--               <div class="carousel-item active">-->
+        {% for comment in comments %}
+        <div class="customer_section_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box_main">
+                            <div class="customer_main">
+                                <div class="customer_left">
+                                    <div class="customer_email">{{ comment.email }}</div>
+                                </div>
+                                <div class="customer_right">
+                                    <h5 class="customer_name">{{ comment.name }}</h5>
+                                    <p class="enim_text">{{ comment.message }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="carousel-item">
+        <!--                  <div class="customer_section_2">-->
+        <!--                     <div class="container">-->
+        <!--                        <div class="row">-->
+        <!--                           <div class="col-md-12">-->
+        <!--                              <div class="box_main">-->
+        <!--                                 <div class="customer_main">-->
+        <!--                                    <div class="customer_left">-->
+        <!--                                       <div class="customer_img"><img src="{% static 'images/customer-img.png' %}"></div>-->
+        <!--                                    </div>-->
+        <!--                                    <div class="customer_right">-->
+        <!--                                       <h3 class="customer_name">DenoMark <span class="quick_icon"><img src="{% static 'images/quick-icon.png' %}"></span></h3>-->
+        <!--                                       <p class="enim_text">anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internetanything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet</p>-->
+        <!--                                    </div>-->
+        <!--                                 </div>-->
+        <!--                              </div>-->
+        <!--                           </div>-->
+        <!--                        </div>-->
+        <!--                     </div>-->
+        <!--                  </div>-->
+    </div>
+    <div class="carousel-item">
+        <!--                  <div class="customer_section_2">-->
+        <!--                     <div class="container">-->
+        <!--                        <div class="row">-->
+        <!--                           <div class="col-md-12">-->
+        <!--                              <div class="box_main">-->
+        <!--                                 <div class="customer_main">-->
+        <!--                                    <div class="customer_left">-->
+        <!--                                       <div class="customer_img"><img src="{% static 'images/customer-img.png' %}"></div>-->
+        <!--                                    </div>-->
+        <!--                                    <div class="customer_right">-->
+        <!--                                       <h3 class="customer_name">DenoMark <span class="quick_icon"><img src="{% static 'images/quick-icon.png' %}"></span></h3>-->
+        <!--                                       <p class="enim_text">anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internetanything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet</p>-->
+        <!--                                    </div>-->
+        <!--                                 </div>-->
+        <!--                              </div>-->
+        <!--                           </div>-->
+        <!--                        </div>-->
+        <!--                     </div>-->
+        <!--                  </div>-->
+        <!--               </div>-->
+        <!--            </div>-->
+        <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </div>
+</div>
+<!-- testimonial section end -->
+<!-- news section start -->
+<div class="news_section layout_padding">
+    <div class="container">
+        <h1 class="news_taital">{% translate 'Recent News' %}</h1>
+        <div class="news_section_2">
+            <div class="news_box">
+                <div id="custom_slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="news_img"><img src="{% static 'images/news-img.png' %}"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="news_img"><img src="{% static 'images/news-img.png' %}"></div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="news_img"><img src="{% static 'images/news-img.png' %}"></div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-next" href="#custom_slider" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"></i>
+                    </a>
+                </div>
+                <h2 class="does_taital">{% translate 'What Does Marijuana Law Mean for You?' %}</h2>
+                <p class="dummy_text">{% translate "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." %}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- news section end -->
+<!-- contact section start -->
+<div class="contact_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="contact_taital">{% translate 'Free Consulation' %}</h1>
+            </div>
+        </div>
+        <div class="contact_section_2">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mail_section map_form_container">
+                        <form method="post">
+                            {% csrf_token %}
+<!--                            <input type="text" class="mail_text" placeholder="Name" name="name">-->
+                                                       {{ form.name }}
+<!--                            <input type="text" class="mail_text" placeholder="Phone Number" name="phone">-->
+                                                       {{ form.phone }}
+<!--                            <input type="text" class="mail_text" placeholder="Your Email" name="email">-->
+                                                       {{ form.email }}
+<!--                            <textarea class="massage-bt" placeholder="Message" rows="5" id="comment"-->
+<!--                                      name="message"></textarea>-->
+                                                       {{ form.message }}
+                            <div class="send_bt active">
+                                <button type="submit" style="background: none">{% translate 'Send Now' %}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact section end -->
+{% endblock %}
+
+{% block js %}
+<!-- Javascript files-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+<script src="{% static 'js/plugin.js' %}"></script>
+<!-- sidebar -->
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<!-- javascript -->
+{% endblock %}

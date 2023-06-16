@@ -1,0 +1,140 @@
+{% load static %}
+{% load i18n %}
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>{% block title %}{% endblock %}</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+
+{% block style %}{% endblock %}
+
+<!-- header section start -->
+<div class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"><img src="{% static 'images/logo.png' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">{% translate 'Home' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">{% translate 'About' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/math">{% translate 'Maths' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/what-we-do">{% translate 'What we do' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">{% translate 'Blog' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">{% translate 'Contact Us' %}</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/category">{% translate 'Category' %}</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="search icon">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/search">{% translate 'Search' %}</a>
+                        </li>
+                    </div>
+                    <div class="login_bt">
+                        {% if user.is_authenticated %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/accounts/logout">{% translate 'SIGN OUT' %}</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/accounts/login">{% translate 'SIGN IN' %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/register">{% translate 'REGISTER' %}</a>
+                        </li>
+                        {% endif %}
+                    </div>
+                </form>
+                <li class="nav-item">
+                    <form action="{% url 'set_language' %" method="post">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ redirect_to }}">
+                        <select name="language">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {% get_available_languages  as LANGUAGES %}
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}" {% if language.code ==  LANGUAGE_CODE %} selected{% endif %}>
+                                    {{ language.name_local }}  ({{ language.code }})
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Choose">
+                    </form>
+                </li>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- header section end -->
+
+{% block content %}{% endblock %}
+
+<!-- footer section start -->
+<div class="footer_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="location_text">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_logo">
+                <a href="/">
+                    <img src="{% static 'images/logo.png' %}">
+                </a>
+            </div>
+            <div class="social_icon">
+                <ul>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer section end -->
+<!-- copyright section start -->
+<div class="copyright_section">
+    <div class="container">
+        <p class="copyright_text">{% translate '2020 All Rights Reserved. Design by' %}<a href="https://html.design">{% translate 'Free Html
+            Templates' %}</a></p>
+    </div>
+</div>
+<!-- copyright section end -->
+{% block js %}{% endblock %}
