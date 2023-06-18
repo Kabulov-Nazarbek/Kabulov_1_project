@@ -28,19 +28,19 @@ msgstr "English"
 
 #: templates/index.html:4
 msgid "Home"
-msgstr "Bosh sahifa"
+msgstr ""
 
 #: templates/index.html:33
 msgid "We Provide Law Practice"
-msgstr "Biz yuridik amaliyotni taqdim etamiz"
+msgstr ""
 
 #: templates/index.html:36
 msgid "Read More"
-msgstr "Ko'proq o'qish"
+msgstr ""
 
 #: templates/index.html:37
 msgid "Contact Us"
-msgstr "Biz bilan bog'lanish"
+msgstr ""
 
 #: venv/Lib/site-packages/django/contrib/messages/apps.py:15
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15

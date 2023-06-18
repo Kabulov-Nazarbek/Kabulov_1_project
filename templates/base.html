@@ -33,7 +33,7 @@
                         <a class="nav-link" href="/about">{% translate 'About' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/math">{% translate 'Maths' %}</a>
+                        <a class="nav-link" href="/maths">{% translate 'Maths' %}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/what-we-do">{% translate 'What we do' %}</a>
@@ -44,48 +44,46 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">{% translate 'Contact Us' %}</a>
                     </li>
-                     <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="/category">{% translate 'Category' %}</a>
                     </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="search icon">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/search">{% translate 'Search' %}</a>
-                        </li>
-                    </div>
-                    <div class="login_bt">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/search">{% translate 'Search' %}</a>
+                    </li>
                         {% if user.is_authenticated %}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/accounts/logout">{% translate 'SIGN OUT' %}</a>
-                        </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="">{{ user.first_name }} {{ user.last_name }}</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/accounts/logout">{% translate 'SIGN OUT' %}</a>
+                    </li>
                         {% else %}
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/accounts/login">{% translate 'SIGN IN' %}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/accounts/register">{% translate 'REGISTER' %}</a>
-                        </li>
-                        {% endif %}
-                    </div>
-                </form>
-                <li class="nav-item">
-                    <form action="{% url 'set_language' %" method="post">
-                        {% csrf_token %}
-                        <input name="next" type="hidden" value="{{ redirect_to }}">
-                        <select name="language">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/accounts/login">{% translate 'SIGN IN' %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/register">{% translate 'REGISTER' %}</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <div>
                             {% get_current_language as LANGUAGE_CODE %}
-                            {% get_available_languages  as LANGUAGES %}
+                            {% get_available_languages as LANGUAGES %}
                             {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                                <option value="{{ language.code }}" {% if language.code ==  LANGUAGE_CODE %} selected{% endif %}>
-                                    {{ language.name_local }}  ({{ language.code }})
-                                </option>
-                            {% endfor %}
-                        </select>
-                        <input type="submit" value="Choose">
-                    </form>
-                </li>
+                            <form action="{% url 'set_language' %}" method="POST">
+                                {% csrf_token %}
+                                <input name="next" type="hidden" value="{{ redirect_to }}">
+                                <select name="language" onchange="this.form.submit()">
+                                    {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </nav>
     </div>
@@ -102,13 +100,13 @@
                 <div class="location_text">
                     <ul>
                         <li>
-                            <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/maps/@41.2899773,69.2548094,12z?entry=ttu"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                            <a href=""><i class="fa fa-phone" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            <a href="/contact"><i class="fa fa-envelope" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -120,9 +118,9 @@
             </div>
             <div class="social_icon">
                 <ul>
-                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="https://linkedin.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -132,7 +130,8 @@
 <!-- copyright section start -->
 <div class="copyright_section">
     <div class="container">
-        <p class="copyright_text">{% translate '2020 All Rights Reserved. Design by' %}<a href="https://html.design">{% translate 'Free Html
+        <p class="copyright_text">{% translate '2020 All Rights Reserved. Design by' %}<a href="https://html.design">{%
+            translate 'Free Html
             Templates' %}</a></p>
     </div>
 </div>
