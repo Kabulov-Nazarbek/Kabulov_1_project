@@ -41,3 +41,15 @@ class Comment(models.Model):
     class Meta:
         verbose_name = _('Comment')
         verbose_name_plural = _('Comments')
+
+
+class Service(models.Model):
+    specialty = models.CharField(max_length=100, verbose_name=_('specialty'))
+    image = models.ImageField(upload_to='pics', verbose_name=_('image'))
+
+    def __str__(self):
+        return self.specialty
+
+    class Meta:
+        verbose_name = _('Service')
+        verbose_name_plural = _('Services')

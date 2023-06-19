@@ -130,7 +130,7 @@ LANGUAGE_CODE = 'uz'
 
 LANGUAGES = (
     ('uz', ("O'zbek tili")),
-    ('en', ("Ingliz tili")),
+    ('en', ("Ingliz tili"))
 )
 
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
@@ -163,4 +163,4 @@ EMAIL_HOST_USER = "nqobulov571@gmail.com"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = 'pvnfilyvllrprllt'
+EMAIL_HOST_PASSWORD = 'etxuidoxawapmgyf'

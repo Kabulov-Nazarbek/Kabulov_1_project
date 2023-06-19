@@ -1,14 +1,13 @@
 from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, \
     PasswordResetCompleteView
 from django.urls import path
-from .views import register, login, logout, catigory
+from .views import register, login, logout
 
 
 urlpatterns = [
     path('register', register, name='register'),
     path('login', login, name='login'),
     path('logout', logout, name='logout'),
-    path('catigory', catigory, name='catigory'),
 
     path(
          'reset-password',

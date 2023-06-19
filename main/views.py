@@ -3,7 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.views import View
 from django.db.models import Q
-from .models import Comment, Product, Category
+from .models import Comment, Product, Category, Service
 from .forms import CommentForm
 
 
@@ -15,9 +15,11 @@ class HomeView(View):
         form = CommentForm()
         products = Product.objects.all()
         comments = Comment.objects.all()
+        services = Service.objects.all()
         return render(request, 'index.html', {
             'comments': comments,
             'products': products,
+            'services': services,
             'form': form
         })
 
@@ -39,16 +41,19 @@ class HomeView(View):
         return redirect('/')
 
 
-def about(request):
-    return render(request, 'about.html')
+class About(View):
+    def get(self, request):
+        return render(request, 'about.html')
 
 
-def what_we_do(request):
-    return render(request, 'what-we.html')
+class WhatWeDo(View):
+    def get(self, request):
+        return render(request, 'what-we.html')
 
 
-def blog(request):
-    return render(request, 'blog.html')
+class Blog(View):
+    def get(self, request):
+        return render(request, 'blog.html')
 
 
 class Contact(LoginRequiredMixin, View):
@@ -110,9 +115,6 @@ class Math(View):
         num2 = request.GET.get('num2', 0)
         add = int(num1) + int(num2)
         add = str(add)
-        print(type(num1))
-        print(type(add))
-        print(add)
         return render(request, 'math.html', {
             'add': add
         })

@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="banner_taital_main">
-                                <h1 class="banner_taital">{% translate 'We Provide Law Practice' %}</' %}h1>
+                                <h1 class="banner_taital">{% translate 'We Provide Law Practice' %}</h1>
                                 <p class="banner_text">{% translate 'Cicero, written in 45 BC. This book is a treatise
                                     on the theory
                                     of ethics, very popular during the Renaissance. The first line of Lorem' %}</p>
@@ -294,13 +294,15 @@
         <div class="studies_section_2">
             <div class="row">
                 <div class="col-md-4">
+                    {% for i in services %}
                     <div class="hover01 column">
-                        <figure><img src="{% static 'images/service-img1.png' %}"></figure>
+                        <figure><img src="{{ i.image.url }}"></figure>
                     </div>
                     <div class="studies_box">
-                        <h3 class="introduction_text">{% translate 'Master of Law, 2010' %}</h3>
+                        <h3 class="introduction_text">{{ i.specialty }}</h3>
                     </div>
                     <div class="read_bt"><a href="#">{% translate 'Read More' %}</a></div>
+                    {% endfor %}
                 </div>
                 <div class="col-md-4">
                     <div class="hover01 column">

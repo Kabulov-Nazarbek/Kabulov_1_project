@@ -56,8 +56,3 @@ def logout(request):
     auth.logout(request)
     return redirect('/')
 
-
-def catigory(request):
-    if User.objects.filter(email=email).exists():
-        return render(request, 'catigory.html')
-    return redirect('register')
